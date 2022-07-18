@@ -73,7 +73,7 @@ group :test do
   gem "webdrivers"
 end
 
-# 本番環境ではPostgresqlを使う
+# 本番環境ではPostgresqlを使用
 group :production do
   gem 'pg', '1.1'
 end
