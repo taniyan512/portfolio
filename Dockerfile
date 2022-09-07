@@ -6,6 +6,9 @@ RUN apt-get update -qq && \
   mariadb-server\
   mariadb-client
 
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "vim"]
+
 WORKDIR /portfolio
 
 COPY Gemfile /portfolio//Gemfile
