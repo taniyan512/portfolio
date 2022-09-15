@@ -77,8 +77,3 @@ group :development, :test do
 end
 
 gem 'mysql2'
-
-gem 'devise'
-
-gem "aws-sdk-s3", require: false
-
