@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/' => 'home#top'
+  get 'home/profile' => 'home#profile', as: :profile_home
+  post 'home/profile' => 'home#update', as: :update_home
 end

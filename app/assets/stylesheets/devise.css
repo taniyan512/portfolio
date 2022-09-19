@@ -1,0 +1,19 @@
+.signup-content {
+  align-items: center;
+  display: flex;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.form-signup {
+  width: 100%;
+  max-width: 330px;
+  padding: 200px 15px 15px 15px;
+  margin: auto;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
