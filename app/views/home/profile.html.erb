@@ -1,0 +1,52 @@
+<% if flash[:notcie] %>
+<p class="notice"><%= flash[:notice] %></p>
+<% end %>
+<div class="profile">
+  <div class="profile-form">
+    <div class="text-center">
+      <h4>プロフィール</h4>
+      <% if @user.profile_image.present? %>
+        <%= image_tag @user.profile_image.url, class: "rounded img-fluid" %>
+      <% else %>
+        <img class="login-icon" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpeg">
+      <% end %>
+    </div>
+    <div class="profile-container">
+      <%= form_with url: update_home_path, method: :post do |f| %>
+        <table>
+          <tr>
+            <th><%= f.label :profile_image, "アイコン画像" , class:"form-label" %></th>
+            <td><%= f.file_field :profile_image, class: "mb-3 form-control", value: @user.profile_image %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :user_name ,"名前", class: "form-label" %></th>
+            <td><%= f.text_field :user_name, class: "mb-3 form-control", value: @user.user_name %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :self_introduce ,"自己紹介", class: "form-label" %></th>
+            <td><%= f.text_area :self_introduce, class: "mb-3 form-control", value: @user.self_introduce %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :youtube_url ,"youtubeチャンネルのurl", class: "form-label" %></th>
+            <td><%= f.text_area :youtube_url, class: "mb-3 form-control", value: @user.youtube_url %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :instagram_url ,"instagramのurl", class: "form-label" %></th>
+            <td><%= f.text_area :instagram_url, class: "mb-3 form-control", value: @user.instagram_url %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :twitter_url ,"Twwiterのurl", class: "form-label" %></th>
+            <td><%= f.text_area :twitter_url, class: "mb-3 form-control", value: @user.twitter_url %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :self_introduce_movie_url ,"自己PR動画（見てほしいyoutubeのurl）", class: "form-label" %></th>
+            <td><%= f.text_area :self_introduce_movie_url, class: "mb-3 form-control", value: @user.self_introduce_movie_url %></td>
+          </tr>
+          </table>
+            <ul class="mb-3 form-check">
+            <li><%= f.submit "更新", class: "btn btn-primary"%></li>
+            </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
