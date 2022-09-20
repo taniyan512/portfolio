@@ -4,8 +4,8 @@ services:
     build:
       context: .
 # =========ローカルと本番切り替え===========
-    command: bundle exec puma -C config/puma.rb -e production
-    #command: bundle exec puma -C config/puma.rb
+    #command: bundle exec puma -C config/puma.rb -e production
+    command: bundle exec puma -C config/puma.rb
 # ======================================
 
     volumes:
@@ -18,22 +18,22 @@ services:
     networks:
       - portfolio-network
 # =========ローカルと本番切り替え===========     
-    #depends_on:
-    # - db
+    depends_on:
+      - db
 
-  #db:
-    #image: mysql:5.7
-    #environment:
-      #MYSQL_ROOT_PASSWORD: password
-      #MYSQL_USER: user
-      #MYSQL_PASSWORD: password
-      #MYSQL_DATABASE: portfolio_development
-    #volumes:
-      #- db-data:/var/lib/mysql
-    #ports:
-      #- 33306:3306
-    #networks:
-      #- portfolio-network
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: portfolio_development
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - 33306:3306
+    networks:
+      - portfolio-network
 # =========ローカルと本番切り替え===========     
 
   web:
