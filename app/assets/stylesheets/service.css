@@ -15,3 +15,20 @@
 ul {
   list-style: none;
 }
+
+.service-images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.service-content {
+  width: 25%;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.col-lg-8 {
+  margin:0 auto;
+}
