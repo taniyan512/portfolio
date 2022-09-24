@@ -32,3 +32,45 @@ img {
 .col-lg-8 {
   margin:0 auto;
 }
+
+.opaline {
+  padding: 40px 40px;
+  background-color: rgba(128, 215, 247, 0.660);
+}
+
+.col-lg-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.container-fluid {
+  width:100%;
+}
+
+.card-img {
+  object-fit: cover;
+  height:550px;
+}
+
+.justify-content-end{
+  padding-top:50px;
+}
+
+.opaline .boxes {
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  border: 1px solid #FFF;
+}
+
+h3 {
+  font-family:"Hannari";
+}
+
+h5 {
+  font-family:"Hannari";
+}
+
+p {
+  font-family:"Hannari";
+}
