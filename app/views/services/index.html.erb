@@ -1,0 +1,20 @@
+<div class="col-lg-8 mt-4">
+  <h2 class="mb-4 text-center">サービス一覧</h2>
+  <div class="service-images">
+    <% @services.each do |service| %>
+    <div class="service-content text-center mb-4">
+      <%= link_to service_path(service.id) do %>
+        <% if service.user.profile_image.url.present? %>
+          <div class="img"><%= image_tag service.user.profile_image.url, size: "150x110" %></div>
+        <% else %>
+          <img class="img" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpeg", size: "150x110">
+        <% end %>
+        <%= service.user.user_name %><br>
+        <%= service.lesson_time %>分<br>
+        <%= service.lesson_price %>円<br>
+        <%= service.lesson_detail %>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
