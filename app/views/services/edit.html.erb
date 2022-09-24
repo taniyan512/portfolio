@@ -1,0 +1,37 @@
+<div class="service-new">
+  <div class="service-form">
+    <div class="text-center">
+      <h4>サービス作成</h4>
+    </div>
+    <div class="service-container">
+      <%= form_with(model: @service, local: true) do |f| %>
+        <table>
+          <tr>
+            <th><%= f.label :lesson_time, "レッスン時間" , class:"form-label" %></th>
+            <td>
+              <%= f.select :lesson_time, 
+                  [['30分',30],['45分',45],['60分',60],['75分',75],['90分',90],['105分',105],['120分',120]], {}, {class: "form-select mb-3 form-control"}
+              %>
+            </td>  
+          </tr>
+          <tr>
+            <th><%= f.label :lesson_price,"金額", class: "form-label" %></th>
+            <td><%= f.select :lesson_price, 
+                    [['500円',500],['1000円',1000],['1500円',1500],['2000円',2000],['2500円',2500],['3000円',3000],['3500円',3500],['4000円',4000],['4500円',4500],['5000円',5000],['5500円',5500],['6000円',6000],['6500円',6500],['7000円',7000],['7500円',7500],['8000円',8000],['8500円',8500],['9000円',9000],['9500円',9500],['10000円',10000],
+                    ['10500円',10500],['11000円',11000],['11500円',11500],['12000円',12000],['12500円',12500],['13000円',13000],['13500円',13500],['14000円',14000],['14500円',14500],['15000円',15000],['15500円',15500],['16000円',16000],['16500円',16500],['17000円',17000],['17500円',17500],['18000円',18000],['18500円',18500],['19000円',19000],['19500円',19500],['20000円',20000]],
+                    {}, {class: "form-select mb-3 form-control"}
+                  %>
+            </td>
+          </tr>
+          <tr>
+            <th><%= f.label :lesson_detail ,"レッスン内容", class: "form-label" %></th>
+            <td><%= f.text_area :lesson_detail, class: "mb-3 form-control",value: @service.lesson_detail %></td>
+          </tr>
+          </table>
+            <ul class="mb-3 form-check">
+            <li><%= f.submit "確定", class: "btn btn-primary"%></li>
+            </ul>
+        <% end %>
+    </div>
+  </div>
+</div>
