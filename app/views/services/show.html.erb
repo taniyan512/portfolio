@@ -1,0 +1,35 @@
+<div class="card bg-dark text-white">
+  <div class="container-fluid">
+  <img class="card-img" src="/assets/Asian_Kara_k-popGuitar_449009 (2).jpg">
+  </div>
+  <div class="card-img-overlay">
+    <div class="row justify-content-end">
+      <div class="col-md-10 col-lg-6 opaline">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3><%= @service.user.user_name %></h3>
+            <h5>サービス内容</h5>
+            <p><%= @service.lesson_detail %></p>
+        </div>
+      </div>
+      <div class="row text-center">
+          <div class="col-sm-6 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+            <div class="boxes">
+              <h5>レッスン時間</h5>
+              <h3 class="numscroller roller-title-number-1 scrollzip isShown"><%= @service.lesson_time %>分</h3>
+            </div>
+          </div>
+          <div class="col-sm-6 wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+            <div class="boxes">
+              <h5>金額</h5>
+              <h3 class="numscroller roller-title-number-2 scrollzip isShown"><%= @service.lesson_price %>円</h3>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <button type="button" class="btn btn-primary">申し込む</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
