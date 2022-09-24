@@ -27,6 +27,11 @@ class ServicesController < ApplicationController
   end
 
   def update
+    if @service.update(params.require(:service).permit(:lesson_time, :lesson_price, :lesson_detail))
+      redirect_to services_path
+    else
+      render :edit
+    end
   end
 
   def destroy
