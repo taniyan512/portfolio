@@ -1,4 +1,6 @@
 class ServicesController < ApplicationController
+  before_action :ensure_user, only: [:edit, :update, :destroy]
+
   def index
     @services = Service.all
   end
@@ -19,5 +21,21 @@ class ServicesController < ApplicationController
 
   def show 
     @service = Service.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+  def ensure_user
+    @services = current_user.services
+    @service = @services.find_by(id: params[:id])
+    redirect_to new_service_path unless @service
   end
 end
