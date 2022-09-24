@@ -49,7 +49,7 @@ img {
 
 .card-img {
   object-fit: cover;
-  height:550px;
+  height:650px;
 }
 
 .justify-content-end{
@@ -73,4 +73,9 @@ h5 {
 
 p {
   font-family:"Hannari";
+}
+
+.service-btn {
+  margin-top:15px;
+  text-align: center;
 }
