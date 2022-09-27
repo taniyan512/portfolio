@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(params.permit(:profile_image, :user_name, :self_introduce, :twitter_url, :youtube_url, :instagram_url, :self_introduce_movie_url))
+    if @user.update(params.permit(:profile_image, :user_name, :self_introduce, :twitter_url, :youtube_url, :instagram_url))
       flash[:notice] = "Profile was successfully updated."
       redirect_to "/"
     else
