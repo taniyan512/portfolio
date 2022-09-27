@@ -16,4 +16,9 @@ class HomeController < ApplicationController
       render 'profile'
     end
   end
+
+  def show
+    @user = User.find(params[:id])
+    @services = @user.services
+  end
 end
