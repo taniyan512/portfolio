@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   
   resources :services
   post 'services' => 'services#create', as: :create_service
+
+  resources :movies
+  post 'movies' => 'movies#create', as: :create_movies
 end
