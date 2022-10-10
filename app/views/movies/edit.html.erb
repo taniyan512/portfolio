@@ -1,0 +1,16 @@
+<div class="profile-form">
+  <%= form_with model: @movie do |f| %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <div class="profile-container">
+    <table>
+      <tr>
+        <th><%= f.label :movie_url ,"自己PR動画（見てほしいyoutubeのurl）", class: "form-label" %></th>
+        <td><%= f.text_field :movie_url, class: "mb-3 form-control", value: @movie.movie_url%></td>
+      </tr>
+    </table>
+      <ul class="mb-3 form-check">
+        <li><%= f.submit "編集", class: "btn btn-primary"%></li>
+      </ul>
+  </div>
+  <% end %>
+</div>

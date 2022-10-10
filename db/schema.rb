@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_23_102008) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_27_213531) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,6 +39,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_102008) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "movies", charset: "utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "movie_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "services", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,7 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_102008) do
     t.datetime "updated_at", null: false
     t.string "user_name"
     t.string "self_introduce"
-    t.string "self_introduce_movie_url"
     t.string "youtube_url"
     t.string "instagram_url"
     t.string "twitter_url"
