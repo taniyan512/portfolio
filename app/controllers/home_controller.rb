@@ -19,6 +19,7 @@ class HomeController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_movies = @user.movies
     @services = @user.services
   end
 end
