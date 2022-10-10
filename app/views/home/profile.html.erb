@@ -38,10 +38,6 @@
             <th><%= f.label :twitter_url ,"Twwiterのurl", class: "form-label" %></th>
             <td><%= f.text_area :twitter_url, class: "mb-3 form-control", value: @user.twitter_url %></td>
           </tr>
-          <tr>
-            <th><%= f.label :self_introduce_movie_url ,"自己PR動画（見てほしいyoutubeのurl）", class: "form-label" %></th>
-            <td><%= f.text_area :self_introduce_movie_url, class: "mb-3 form-control", value: @user.self_introduce_movie_url %></td>
-          </tr>
           </table>
             <ul class="mb-3 form-check">
             <li><%= f.submit "更新", class: "btn btn-primary"%></li>
