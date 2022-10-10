@@ -1,0 +1,20 @@
+<%= render "shared/partial", obj:@user %>
+<div class="profile-form">
+  <div class="text-center">
+    <h4>アピールしたい動画を貼ろう</h4>
+  </div>
+  <%= form_with model: @movie, url: create_movies_path do |f| %>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <div class="profile-container">
+    <table>
+      <tr>
+        <th><%= f.label :movie_url ,"自己PR動画（見てほしいyoutubeのurl）", class: "form-label" %></th>
+        <td><%= f.text_field :movie_url, class: "mb-3 form-control" %></td>
+      </tr>
+    </table>
+      <ul class="mb-3 form-check">
+        <li><%= f.submit "作成", class: "btn btn-primary"%></li>
+      </ul>
+  </div>
+  <% end %>
+</div>

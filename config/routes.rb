@@ -14,4 +14,5 @@ Rails.application.routes.draw do
 
   resources :movies
   post 'movies' => 'movies#create', as: :create_movies
+  post 'movies/:id' => 'movies#destroy', as: :destroy_movie
 end
