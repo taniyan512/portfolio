@@ -19,7 +19,12 @@
               <p class="text-lg mb-0">
                 <%= @user.self_introduce %>
                 <% if @user == current_user %><br>
+                <%= link_to profile_home_path(current_user.id), class: "profile-link" do %>
                 <button type="button" class="btn btn-sm text-nowrap mb-0"><i class="bi bi-pencil-square"></i></button>
+                <% end %>
+                <%= link_to new_movie_path(current_user.id), class: "profile-link" do %>
+                <button type="button" class="btn btn-sm text-nowrap mb-0" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="bi bi-camera-reels"></i></button>
+                <% end %>
                 <% end %>
               </p>
             </div>
@@ -54,11 +59,24 @@
   </div>
   <div class="container">
     <div class="card card-plain">
-      <div class="card-body px-0">
-        <% @users.each do |user| %>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=user.self_introduce_movie_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% @user_movies.first(3).each do |user_movie| %>
+          <div class="card-body" style="width: 18rem;">
+          <iframe width="400" height="500" src="https://www.youtube.com/embed/<%=user_movie.movie_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="card-img-top"></iframe>
+            <% if @user == current_user %>
+            <div class="card-body">
+            <%= link_to edit_movie_path(user_movie.id), class: "profile-link" do %>
+              <button class="btn btn-primary">編集</button>
+            <% end %>
+            <%= link_to destroy_movie_path(user_movie.id), class: "profile-link", data: { turbo_method: :delete } do %>
+              <button class="btn btn-danger">削除</button>
+            <% end %>
+            <% end %> 
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
