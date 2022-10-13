@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def top
-  
+    @q = User.ransack(params[:q])
   end
 
   def profile
@@ -21,5 +21,10 @@ class HomeController < ApplicationController
     @user = User.find(params[:id])
     @user_movies = @user.movies
     @services = @user.services
+  end
+
+  def search
+    @q = User.ransack(params[:q])
+    @results = @q.result
   end
 end
