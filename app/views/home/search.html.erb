@@ -1,0 +1,17 @@
+<div class="col-lg-8 mt-4">
+  <h2 class="mb-4 text-center">検索結果</h2>
+  <div class="service-images">
+    <% @results.each do |result| %>
+    <div class="service-content text-center mb-4">
+      <%= link_to show_home_path(result.id) do %>
+        <% if result.profile_image.url.present? %>
+          <div class="img"><%= image_tag result.profile_image.url, size: "150x110" %></div>
+        <% else %>
+          <img class="img" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpeg" width="150" height="110"><br>
+        <% end %>
+        <%= result.user_name %><br>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
