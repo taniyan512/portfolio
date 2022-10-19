@@ -40,10 +40,12 @@
           </li>
         </ul>
         <% end %>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        <div class = "search-form">
+        <%= search_form_for @q, url: search_home_path do |f| %>
+        <%= f.search_field :user_name_cont, placeholder: "ユーザー名", class: "me-2"  %>
+        <%= f.submit class: "btn btn-outline-success" %>
+        <% end %>
+        </div>
       </div>
     </div>
   </nav>
