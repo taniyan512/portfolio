@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def top
     @q = User.ransack(params[:q])
+    @services = Service.all
   end
 
   def profile

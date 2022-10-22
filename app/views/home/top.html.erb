@@ -1,0 +1,67 @@
+<header class="bg-dark py-5">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center justify-content-center top-content">
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <div class="my-5 text-center text-xl-start">
+          <h1 class="display-5 fw-bolder text-white mb-2">響け、私のギター。</h1>
+          <p class="lead fw-normal text-white-50 mb-4">ギターを弾いてみよう。昔好きだったあの曲、最近よく聴くあの曲、ギターを抱えて腕を一振りしてみれば、そこからあなたのギター人生が始まります。あなたの意のままに奏でてくれる相棒と共に終わることのない旋律の旅に出ましょう。</p>
+        </div>
+      </div>
+      <img class="col-xxl-6 rounded-3" src="/assets/yui.jpg" alt="..." />
+    </div>
+  </div>
+</header>
+<!-- About section one-->
+<section class="py-5 bg-light" id="scroll-target">
+  <div class="container px-5 my-5 section-one">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="/assets/ce6a79bb9b3d7fb2a3b59e08046a5f56.jpg" alt="..." /></div>
+      <div class="col-lg-6">
+        <h2 class="fw-bolder">ギタっぷるとは？ -What is Gitapple?-</h2>
+        <p class="lead fw-normal text-muted mb-0">レッスンを受けたい人、誰かにギターを教えたい人をマッチングさせるサービスです。誰かにオフラインで会うことが懸念される昨今ですが、ギタっぷるを使っていただければあなたの自宅が一瞬でレッスン教室になります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About section two-->
+<section class="py-5 ">
+  <div class="container px-5 my-5 section-two">
+    <div class="row gx-5 align-items-center">
+      <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="/assets/akogi1.jpg" alt="..." /></div>
+      <div class="col-lg-6">
+        <h2 class="fw-bolder">シンプル -simple-</h2>
+        <p class="lead fw-normal text-muted mb-0">ギタっぷるは至ってシンプルです。気になる相手のサービスから申し込みをすればすぐにマッチングが成立します。まずはユーザーやサービスを探してみましょう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Team members section-->
+<section class="py-5 bg-light">
+  <div class="container px-5 my-5">
+    <div class="text-center">
+      <h2 class="fw-bolder">レッスン提供ユーザー</h2>
+      <p class="lead fw-normal text-muted mb-5">気になるユーザーをクリックしてみよう！</p>
+    </div>
+    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+          <% @services.first(4).each do |service| %>
+            <div class="col mb-5 mb-5 mb-xl-0">
+              <div class="text-center">
+                <%= link_to show_home_path(service.user_id) do %>
+                  <% if service.user.profile_image.url.present? %>
+                    <div class="img-fluid rounded-circle mb-4 px-4"><%= image_tag service.user.profile_image.url, size: "150x110" %></div>
+                  <% else %>
+                    <img class="img-fluid rounded-circle mb-4 px-4" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpeg" width="150" height="110"><br>
+                  <% end %>
+                  <h5 class="fw-bolder"><%= service.user.user_name %></h5>
+                  <div class="fst-italic text-muted"><%= service.lesson_time %></div>
+                  <div class="fst-italic text-muted"><%= service.lesson_price %></div>
+                  <div class="fst-italic text-muted"><%= truncate(service.lesson_detail, length: 20) %></div>
+                <% end %>
+              </div>
+            </div>    
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
