@@ -43,6 +43,10 @@ class ServicesController < ApplicationController
     end
   end
 
+  def apply
+    
+  end
+
   private
   def ensure_user
     @services = current_user.services
