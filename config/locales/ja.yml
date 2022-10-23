@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      movie: 動画
+      service: サービス
+    attributes:
+      user:
+        user_name: ユーザー名
+      movie:
+        movie_url: 貼りたいyoutubeのurl
+      service:
+        lesson_price: レッスン料金
+        lesson_time: レッスン時間
+        lesson_detail: レッスン内容
+          
