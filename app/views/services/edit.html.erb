@@ -5,6 +5,7 @@
     </div>
     <div class="service-container">
       <%= form_with(model: @service, local: true) do |f| %>
+      <%= render "shared/partial", obj:@service %>
         <table>
           <tr>
             <th><%= f.label :lesson_time, "レッスン時間" , class:"form-label" %></th>
