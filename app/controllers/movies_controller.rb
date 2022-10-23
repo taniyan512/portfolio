@@ -5,14 +5,15 @@ class MoviesController < ApplicationController
   end
 
   def create
-    if @movie = Movie.create(movie_params)
+      @user = current_user
+      @movie = Movie.create(movie_params)
       url = @movie.movie_url
       url = url.last(11)
       @movie.movie_url = url
-      @movie.save
+    if  @movie.save
       redirect_to show_home_path(current_user.id)
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end 
   end
 
@@ -22,13 +23,15 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie.update(movie_params)
-    url = @movie.movie_url.last(11)
-    @movie.movie_url = url
-    if @movie.save
+    @movie = Movie.find(params[:id])
+    @user = current_user
+    if @movie.update(movie_params)
+      url = @movie.movie_url.last(11)
+      @movie.movie_url = url
+      @movie.save
       redirect_to show_home_path(current_user)
     else
-      render 'edit'      
+      render 'edit', status: :unprocessable_entity      
     end
   end
 
