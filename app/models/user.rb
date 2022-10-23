@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   has_many :services, dependent: :destroy
   has_many :movies, dependent: :destroy
+
+  validates :user_name, presence: true
 end

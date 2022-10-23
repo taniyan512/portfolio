@@ -1,10 +1,11 @@
-<div class="profile-form">
+<div class="container">
   <div class="text-center">
     <h4>アピールしたい動画を貼ろう</h4>
   </div>
   <%= form_with model: @movie, url: create_movies_path do |f| %>
+  <%= render "shared/partial", obj:@movie %>
   <%= f.hidden_field :user_id, :value => @user.id %>
-  <div class="profile-container">
+  <div class="movie-container">
     <table>
       <tr>
         <th><%= f.label :movie_url ,"自己PR動画（見てほしいyoutubeのurl）", class: "form-label" %></th>

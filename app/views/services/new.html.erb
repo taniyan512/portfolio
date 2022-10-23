@@ -5,6 +5,7 @@
     </div>
     <div class="service-container">
       <%= form_with url: create_service_path, method: :post do |f| %>
+        <%= render "shared/partial", obj:@service %>
         <table>
           <tr>
             <th><%= f.label :lesson_time, "レッスン時間" , class:"form-label" %></th>

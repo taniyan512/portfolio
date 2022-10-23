@@ -14,7 +14,7 @@ class HomeController < ApplicationController
       flash[:notice] = "Profile was successfully updated."
       redirect_to "/"
     else
-      render 'profile'
+      render 'profile', status: :unprocessable_entity
     end
   end
 

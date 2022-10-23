@@ -83,3 +83,5 @@ gem 'devise'
 gem "aws-sdk-s3"
 
 gem "ransack"
+
+gem "rails-i18n"
