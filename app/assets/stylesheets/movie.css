@@ -5,3 +5,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.movie-content {
+  margin:300px 0 300px 0;
+}

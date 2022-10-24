@@ -16,3 +16,14 @@
 body {
   padding-top:100px;
 }
+
+.bi-github {
+  color: black;
+  margin: 0 10px 0 10px;
+  font-size: 30px;
+}
+
+footer{
+  background-color:#FFFFEE;
+  padding-top: 100px;
+}
