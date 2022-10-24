@@ -1,4 +1,4 @@
-<div class="profile-form">
+<div class="profile-form movie-content">
   <%= form_with model: @movie do |f| %>
     <%= render "shared/partial", obj:@movie %>
   <%= f.hidden_field :user_id, :value => @user.id %>
