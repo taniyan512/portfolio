@@ -4,8 +4,13 @@
   border-radius:50%;
 }
 
+.service-new {
+  padding-top: 200px;
+}
+
 .service-container {
   padding-top: 30px;
+  padding-bottom: 300px;
   text-align: center;
   display: flex;
   justify-content: center;

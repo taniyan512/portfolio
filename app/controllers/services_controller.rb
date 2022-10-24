@@ -6,6 +6,7 @@ class ServicesController < ApplicationController
   end
   
   def new
+    @service = Service.new
   end
 
   def create
@@ -23,13 +24,14 @@ class ServicesController < ApplicationController
   end
 
   def edit
+    @service = Service.find(params[:id])
   end
 
   def update
     if @service.update(params.require(:service).permit(:lesson_time, :lesson_price, :lesson_detail))
       redirect_to services_path
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
