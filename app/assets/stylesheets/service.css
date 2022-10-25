@@ -23,11 +23,7 @@ ul {
 
 .service-images {
   display: flex;
-  flex-wrap: wrap;
-}
-
-.service-content {
-  width: 25%;
+  justify-content: space-between;
 }
 
 img {
@@ -83,4 +79,28 @@ p {
 .service-btn {
   margin-top:15px;
   text-align: center;
+}
+
+.service-introduce a {
+  text-decoration: none;
+  color: black;
+}
+
+.service-introduce {
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+.service-introduce:after{
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffdb88 #fff #ffdb88;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
 }
