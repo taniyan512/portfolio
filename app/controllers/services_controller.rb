@@ -39,7 +39,7 @@ class ServicesController < ApplicationController
     @service.destroy
     
     respond_to do |format|
-      format.html { redirect_to @service, notice: "Task was successfully destroyed.", status: :see_other }
+      format.html { redirect_to show_home_path(current_user.id), notice: "Task was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
