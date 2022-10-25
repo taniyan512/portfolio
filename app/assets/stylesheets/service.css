@@ -24,6 +24,11 @@ ul {
 .service-images {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.service-content {
+  width: 25%;
 }
 
 img {
