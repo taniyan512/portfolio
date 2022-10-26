@@ -30,8 +30,10 @@
           <% if @service.user == current_user %>
             <%= link_to "編集", edit_service_path, class: "btn btn-primary" %>
             <%= link_to "削除", "/services/#{@service.id}", class: "btn btn-primary", data: {"turbo_method": :delete} %>
-          <% else %>
+          <% elsif user_signed_in? %>
             <%= link_to "申し込む", "/apply", class: "btn btn-primary" %>
+          <% else %>
+            <%= link_to "ログインする", "/users/sign_in", class: "btn btn-primary" %>   
           <% end %>  
         </div>  
       </div>
