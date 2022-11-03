@@ -62,6 +62,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'spring-commands-rspec'
 end
 
 group :test do
@@ -74,6 +75,8 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 end
 
 gem 'mysql2'
