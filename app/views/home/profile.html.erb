@@ -6,15 +6,15 @@
         <%= image_tag @user.profile_image.url, class: "rounded img-fluid" %>
       <% else %>
         <img class="login-icon" src="/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpeg">
-      <% end %>
+      <% end %> 
     </div>
     <div class="profile-container">
       <%= form_with url: update_home_path, method: :post do |f| %>
       <%= render "shared/partial", obj:@user %>
         <table>
           <tr>
-            <th><%= f.label :profile_image, "アイコン画像" , class:"form-label" %></th>
-            <td><%= f.file_field :profile_image, class: "mb-3 form-control", value: @user.profile_image %></td>
+            <th><%= f.label :profile_image, "アイコン画像" , class:"form-label"%></th>
+            <td><%= f.file_field :profile_image, class: "mb-3 form-control", value: @user.profile_image.url %></td>
           </tr>
           <tr>
             <th><%= f.label :user_name ,"名前", class: "form-label" %></th>
