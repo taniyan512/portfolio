@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  get '/' => 'home#top'
+  get '/' => 'home#top', as: :top_path
   get 'home/profile' => 'home#profile', as: :profile_home
   post 'home/profile' => 'home#update', as: :update_home
   get 'home/:id' => 'home#show',as: :show_home
