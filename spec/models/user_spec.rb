@@ -26,13 +26,6 @@ RSpec.describe User, type: :model do
       user = build(:user)
       expect(user).to be_valid
     end
-
-    it 'user_nameが空欄の時、登録できないこと' do
-      user = build(:user)
-      user.user_name = ''
-      expect(user).to be_invalid
-    end
-
   end
 
   describe 'リレーション' do
