@@ -38,6 +38,9 @@
           <li class="nav-item">
             <%= link_to "ログイン", "/users/sign_in", class: "nav-link active" %>
           </li>
+          <li class="nav-item">
+            <%= link_to 'ゲストログイン（閲覧用）', "users/guest_sign_in", class: "nav-link active", data: { turbo_method: :post } %>
+          </li>
         </ul>
         <% end %>
         <div class = "search-form">

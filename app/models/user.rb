@@ -10,4 +10,10 @@ class User < ApplicationRecord
   has_many :movies, dependent: :destroy
 
   validates :user_name, presence: true, on: :update
+
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 end

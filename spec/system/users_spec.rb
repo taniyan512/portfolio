@@ -79,6 +79,11 @@ RSpec.describe "Users", type: :system do
         expect(page).to have_no_text('申し込む')
       end
 
+      it 'ゲストログインができること' do
+        post users_guest_sign_in_path
+        expect(response).to redirect_to top_path_url
+      end
+
     end
     describe 'ログイン後' do
       it 'ログアウトができること' do
