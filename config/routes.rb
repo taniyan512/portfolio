@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in', as: :users_guest_sign_in
+  end
 
   get '/' => 'home#top', as: :top_path
   get 'home/profile' => 'home#profile', as: :profile_home
