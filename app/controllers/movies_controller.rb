@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
       @movie.movie_url = url
     if  @movie.save
       redirect_to show_home_path(current_user.id)
+      flash[:notice] = "動画を添付しました。"
     else
       render 'new', status: :unprocessable_entity
     end 
@@ -30,6 +31,7 @@ class MoviesController < ApplicationController
       @movie.movie_url = url
       @movie.save
       redirect_to show_home_path(current_user)
+      flash[:notice] = "動画を編集しました。"
     else
       render 'edit', status: :unprocessable_entity      
     end
@@ -39,6 +41,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to show_home_path(current_user.id)
+    flash[:notice] = "動画を削除しました。"
   end
 
   private
