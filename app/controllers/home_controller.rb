@@ -11,7 +11,7 @@ class HomeController < ApplicationController
   def update
     @user = current_user
     if @user.update(params.permit(:profile_image, :user_name, :self_introduce, :twitter_url, :youtube_url, :instagram_url))
-      flash[:notice] = "Profile was successfully updated."
+      flash[:notice] = "プロフィールを登録しました。"
       redirect_to "/"
     else
       render 'profile', status: :unprocessable_entity
