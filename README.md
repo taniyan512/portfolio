@@ -1,24 +1,27 @@
-# README
+# ギタっぷる
+ギターのレッスンを受けたい人、レッスンを誰かに提供したい人をマッチングさせるサービスです。  
+自己アピールとしてyoutubeの動画を貼り付けることができます。  
+気軽に知らない方と会うのが懸念される昨今ですが、ギタっぷるを使って、オンラインで繋がりましょう。  
+![readme.png…]()
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 使用技術
+* Ruby3.1.1  
+* Ruby on Rails7.0.4  
+* Mysql  
+* Puma  
+* Nginx  
+* AWS
+* VPC  
+* EC2  
+* RDS  
+* Docker/Docker-compose  
+* RSpec  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 機能一覧
+* ユーザー登録、ログイン機能(devise)  
+* 投稿機能(youtube)  
+* 検索機能（ransack)  
+## テスト
+* RSPEC  
+   * 単体テスト(model)  
+   * 統合テスト(system)
