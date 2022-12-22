@@ -20,4 +20,10 @@ Rails.application.routes.draw do
   resources :movies
   post 'movies' => 'movies#create', as: :create_movies
   post 'movies/:id' => 'movies#destroy', as: :destroy_movie
+
+  resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: :followings
+    get 'followers' => 'relationships#followers', as: :followers
+  end
 end

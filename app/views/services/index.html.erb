@@ -3,7 +3,7 @@
   <div class="service-images">
     <% @services.each do |service| %>
     <div class="service-content text-center mb-4">
-      <%= link_to service_path(service.id) do %>
+      <%= link_to service_path(service.id), class: "services" do %>
         <% if service.user.profile_image.url.present? %>
           <div class="img"><%= image_tag service.user.profile_image.url, size: "150x110" %></div>
         <% else %>

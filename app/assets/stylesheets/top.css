@@ -9,3 +9,19 @@
 .section-two {
   padding: 100px 0 100px 0;
 }
+
+.fw-bolder {
+  text-decoration: none;
+  color: black ;
+}
+
+.text-muted {
+  text-decoration: none;
+  color: black ;
+}
+
+.service-link {
+  text-decoration: none;
+  color: gray ;
+  font-size: 30px;
+}

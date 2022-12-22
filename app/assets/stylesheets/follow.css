@@ -1,0 +1,27 @@
+.follow-table {
+  margin-top: 40px;
+}
+
+.follow-table tr {
+  display: table;
+}
+
+.image-td {
+  width:50px;
+}
+
+.link {
+  text-decoration: none;
+  color: black ;
+}
+
+.follow {
+  text-decoration: none;
+  color: black ;
+  margin-left: 30px;
+}
+
+.resson-user {
+  text-decoration: none;
+  color: black ;
+}

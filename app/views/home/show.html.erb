@@ -9,6 +9,16 @@
             <% else %>
               <%= image_tag asset_path("default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg"), class: "rounded img-fluid" %>
             <% end %>
+            <% unless @user == current_user %>
+              <% if current_user.following?(@user) %>
+                <%= button_to "フォロー外す", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %>
+              <% else %>
+                <%= button_to"フォローする", user_relationships_path(@user.id), method: :post, class: "btn btn-primary" %>
+              <% end %>
+            <% else %>
+              <%= link_to "#{@user.followings.count}フォロー中", user_followings_path(@user.id), class: "follow" %>
+              <%= link_to "#{@user.followers.count}フォロワー", user_followers_path(@user.id), class: "follow" %> 
+            <% end %>  
           </div>
           <div class="row py-5">
             <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">

@@ -31,7 +31,7 @@
       <div class="col-lg-6">
         <h2 class="fw-bolder">シンプル -simple-</h2>
         <p class="lead fw-normal text-muted mb-0">ギタっぷるは至ってシンプルです。気になる相手のサービスから申し込みをすればすぐにマッチングが成立します。まずはユーザーやサービスを探してみましょう。</p>
-        <%= link_to "サービス一覧へ", services_path %>
+        <%= link_to "サービス一覧へ", services_path,class: "service-link" %>
       </div>
     </div>
   </div>
@@ -47,7 +47,7 @@
           <% @services.first(4).each do |service| %>
             <div class="col mb-5 mb-5 mb-xl-0">
               <div class="text-center">
-                <%= link_to show_home_path(service.user_id) do %>
+                <%= link_to show_home_path(service.user_id), class: "resson-user" do %>
                   <% if service.user.profile_image.url.present? %>
                     <div class="img-fluid rounded-circle mb-4 px-4"><%= image_tag service.user.profile_image.url, size: "150x110" %></div>
                   <% else %>

@@ -1,0 +1,25 @@
+<div class="container">
+<% if @users.exists? %>
+  <% @users.each do |user| %>
+    <%= link_to(show_home_path(user.id), class: "link") do %>
+      <table class="follow-table">
+        <tbody>
+            <tr>
+              <td class="image-td"><% if user.profile_image.present? %>
+                <%= image_tag user.profile_image.url, class: "avatar  avatar-xxl shadow-xl position-relative z-index-2", size: "50x50" %>
+                  <% else %>
+                    <%= image_tag asset_path("default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg"), class: "rounded img-fluid" %>
+                  <% end %></td>
+              <td><%= user.user_name %></td>
+            </tr>
+            <tr>
+              <td><%= user.self_introduce %></td>
+            </tr>
+        </tbody>
+      </table>
+    <% end %>  
+  <% end %>
+<% else %>
+  <p>ユーザーはいません</p>
+<% end %>
+</div>
